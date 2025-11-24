@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bedella Plumbing - Luxury plumbing solutions for Kitchener, Ontario. Licensed, insured professionals offering 24/7 emergency service, drain cleaning, water heater installation, and bathroom renovations.">
+    <meta name="keywords" content="plumbing, Kitchener plumber, emergency plumbing, drain cleaning, water heater, bathroom renovation, Ontario plumber">
+    <meta name="author" content="Bedella Plumbing">
+    <title>Bedella Plumbing | Luxury Plumbing Solutions in Kitchener, Ontario</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ========================================
+           CSS RESET & BASE STYLES
+        ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Brand Colors */
+            --deep-blue: #1a3a52;
+            --deep-red: #C41E3A;
+            --dark-red: #8B0000;
+            --white: #FFFFFF;
+            --light-gray: #F8F9FA;
+            --medium-gray: #E9ECEF;
+            --dark-gray: #495057;
+            --text-dark: #212529;
+
+            /* Typography */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+
+            /* Spacing */
+            --section-padding: 100px 0;
+            --container-max: 1200px;
+
+            /* Transitions */
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* ========================================
+           TYPOGRAPHY
+        ======================================== */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        /* ========================================
+           UTILITY CLASSES
+        ======================================== */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--deep-red), var(--dark-red));
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(196, 30, 58, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(196, 30, 58, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--deep-blue);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            color: var(--deep-blue);
+            margin-bottom: 15px;
+        }
+
+        .section-title .underline {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--deep-red), var(--deep-blue));
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* ========================================
+           HEADER & NAVIGATION
+        ======================================== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .logo .bedella {
+            color: var(--deep-blue);
+        }
+
+        .logo .plumbing {
+            color: var(--deep-red);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--deep-red);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .phone-number {
+            color: var(--deep-blue);
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .phone-number i {
+            color: var(--deep-red);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--deep-blue);
+            cursor: pointer;
+        }
+
+        /* ========================================
+           HERO SECTION
+        ======================================== */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-image: linear-gradient(rgba(26, 58, 82, 0.7), rgba(26, 58, 82, 0.7)),
+                              url('https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            color: var(--light-gray);
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .emergency-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(196, 30, 58, 0.9);
+            padding: 12px 25px;
+            border-radius: 50px;
+            margin-top: 30px;
+            animation: pulse 2s infinite;
+        }
+
+        .emergency-badge i {
+            font-size: 1.2rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* ========================================
+           ABOUT SECTION
+        ======================================== */
+        .about {
+            padding: var(--section-padding);
+            background: var(--white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-text h2 {
+            color: var(--deep-blue);
+        }
+
+        .about-text p {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px 25px;
+            background: var(--light-gray);
+            border-radius: 10px;
+            border-left: 4px solid var(--deep-red);
+        }
+
+        .badge i {
+            font-size: 1.5rem;
+            color: var(--deep-red);
+        }
+
+        .badge-text strong {
+            display: block;
+            color: var(--deep-blue);
+            font-weight: 600;
+        }
+
+        .badge-text span {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+        }
+
+        /* ========================================
+           SERVICES SECTION
+        ======================================== */
+        .services {
+            padding: var(--section-padding);
+            background: var(--light-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+
+        .service-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--deep-red), var(--dark-red));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(196, 30, 58, 0.4);
+        }
+
+        .service-content {
+            padding: 30px;
+        }
+
+        .service-content h3 {
+            color: var(--deep-blue);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .service-content p {
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+        }
+
+        /* ========================================
+           WHY US SECTION
+        ======================================== */
+        .why-us {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, var(--deep-blue), #0d2538);
+            color: var(--white);
+        }
+
+        .why-us .section-title h2 {
+            color: var(--white);
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .why-us-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .why-us-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .why-us-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, var(--deep-red), var(--dark-red));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(196, 30, 58, 0.4);
+        }
+
+        .why-us-card h3 {
+            color: var(--white);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .why-us-card p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+        }
+
+        /* ========================================
+           TESTIMONIALS SECTION
+        ======================================== */
+        .testimonials {
+            padding: var(--section-padding);
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--light-gray);
+            padding: 40px;
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 3rem;
+            color: var(--deep-red);
+            opacity: 0.2;
+        }
+
+        .stars {
+            color: #FFB800;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-text {
+            color: var(--dark-gray);
+            font-style: italic;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--deep-blue), var(--deep-red));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            color: var(--deep-blue);
+            font-size: 1rem;
+            margin-bottom: 3px;
+        }
+
+        .author-info p {
+            color: var(--dark-gray);
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        /* ========================================
+           CONTACT FORM SECTION
+        ======================================== */
+        .contact {
+            padding: var(--section-padding);
+            background: var(--light-gray);
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 60px;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--deep-blue);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid var(--medium-gray);
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--deep-red);
+            box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 30px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .radio-option input[type="radio"] {
+            width: auto;
+            margin: 0;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .honeypot {
+            display: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .success-message {
+            display: none;
+            padding: 20px;
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+        .footer {
+            background: linear-gradient(135deg, var(--deep-blue), #0d2538);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-section h3 {
+            color: var(--white);
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p,
+        .footer-section li {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info i {
+            color: var(--deep-red);
+            font-size: 1.2rem;
+            width: 25px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background: var(--deep-red);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ========================================
+           SCROLL TO TOP BUTTON
+        ======================================== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--deep-red), var(--dark-red));
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(196, 30, 58, 0.4);
+            z-index: 999;
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(196, 30, 58, 0.5);
+        }
+
+        /* ========================================
+           RESPONSIVE DESIGN
+        ======================================== */
+        @media (max-width: 968px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 40px 20px;
+                gap: 20px;
+                transition: var(--transition);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image img {
+                height: 400px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                padding: 40px 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: 60px 0;
+            }
+
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .btn {
+                padding: 14px 30px;
+                font-size: 0.95rem;
+            }
+
+            .services-grid,
+            .testimonials-grid,
+            .why-us-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .phone-number {
+                font-size: 0.9rem;
+            }
+
+            .contact-content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ========================================
+         HEADER / NAVIGATION
+    ======================================== -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <a href="#home" class="logo">
+                <span class="bedella">Bedella</span>
+                <span class="plumbing">Plumbing</span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="phone-number">
+                    <i class="fas fa-phone"></i>
+                    <span>(519) 555-0199</span>
+                </li>
+                <li><a href="#contact" class="btn btn-primary">Get Quote</a></li>
+            </ul>
+
+            <button class="mobile-menu-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ========================================
+         HERO SECTION
+    ======================================== -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Luxury Plumbing Solutions for Kitchener Homes</h1>
+            <p class="subtitle">Professional, Reliable, Premium Service</p>
+
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Request Free Quote</a>
+                <a href="tel:5195550199" class="btn btn-secondary">Call Now</a>
+            </div>
+
+            <div class="emergency-badge">
+                <i class="fas fa-shield-alt"></i>
+                <span><strong>Emergency Service</strong> - Available 24/7</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         ABOUT SECTION
+    ======================================== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2000&auto=format&fit=crop" alt="Professional Plumber Team">
+                </div>
+
+                <div class="about-text">
+                    <h2>Kitchener's Premier Plumbing Experts</h2>
+                    <p>For over 15 years, Bedella Plumbing has been the trusted name in luxury plumbing solutions throughout Kitchener, Ontario. Our commitment to excellence, attention to detail, and premium service have made us the preferred choice for homeowners who demand the best.</p>
+
+                    <p>We understand that your home is your sanctuary, which is why we treat every job with the utmost care and professionalism. From routine maintenance to complex installations and emergency repairs, our licensed and insured team delivers exceptional results that stand the test of time.</p>
+
+                    <p>As a locally-owned business, we take pride in serving our community with integrity, transparency, and a dedication to customer satisfaction that goes beyond expectations.</p>
+
+                    <div class="trust-badges">
+                        <div class="badge">
+                            <i class="fas fa-certificate"></i>
+                            <div class="badge-text">
+                                <strong>Licensed</strong>
+                                <span>Fully Certified</span>
+                            </div>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <div class="badge-text">
+                                <strong>Insured</strong>
+                                <span>Protected Service</span>
+                            </div>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-award"></i>
+                            <div class="badge-text">
+                                <strong>15+ Years</strong>
+                                <span>Local Expertise</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SERVICES SECTION
+    ======================================== -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Premium Services</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?q=80&w=800&auto=format&fit=crop" alt="Emergency Plumbing">
+                        <div class="service-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Emergency Plumbing Services</h3>
+                        <p>24/7 rapid response for urgent plumbing emergencies. Our team is always ready to protect your home from water damage and restore functionality quickly.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop" alt="Drain Cleaning">
+                        <div class="service-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Drain Cleaning & Maintenance</h3>
+                        <p>Professional drain cleaning using advanced techniques and equipment. Prevent clogs, eliminate odors, and maintain optimal drainage throughout your home.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=800&auto=format&fit=crop" alt="Water Heater">
+                        <div class="service-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Water Heater Repair & Installation</h3>
+                        <p>Expert installation and repair of tank and tankless water heaters. Ensure reliable hot water supply with energy-efficient solutions tailored to your needs.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop" alt="Leak Detection">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Leak Detection & Repair</h3>
+                        <p>State-of-the-art leak detection technology to identify hidden leaks early. Prevent costly water damage with our precise diagnostic and repair services.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1607400201515-c2c41c07d307?q=80&w=800&auto=format&fit=crop" alt="Pipe Repair">
+                        <div class="service-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Pipe Repair & Replacement</h3>
+                        <p>Comprehensive pipe services including repair, replacement, and repiping. We work with all materials to ensure long-lasting, leak-free performance.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop" alt="Fixture Installation">
+                        <div class="service-icon">
+                            <i class="fas fa-faucet"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Fixture Installation</h3>
+                        <p>Professional installation of sinks, faucets, toilets, and other fixtures. Enhance your home's functionality and aesthetics with quality installations.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1581578017093-cd30ed3fbb0a?q=80&w=800&auto=format&fit=crop" alt="Sewer Services">
+                        <div class="service-icon">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Sewer Services</h3>
+                        <p>Complete sewer line inspection, repair, and replacement services. Advanced camera technology for accurate diagnosis and effective solutions.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=800&auto=format&fit=crop" alt="Bathroom Renovation">
+                        <div class="service-icon">
+                            <i class="fas fa-bath"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Bathroom Renovations</h3>
+                        <p>Transform your bathroom into a luxury retreat. Full-service renovations including plumbing design, fixture installation, and custom solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         WHY US SECTION
+    ======================================== -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Bedella Plumbing</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="why-us-grid">
+                <div class="why-us-card">
+                    <div class="why-us-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3>Flat-Rate Transparent Pricing</h3>
+                    <p>No surprises, no hidden fees. We provide upfront, honest pricing before any work begins so you can make informed decisions with confidence.</p>
+                </div>
+
+                <div class="why-us-card">
+                    <div class="why-us-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Same-Day Service Available</h3>
+                    <p>We understand urgency. Our team is equipped to provide same-day service for most plumbing needs, minimizing disruption to your daily life.</p>
+                </div>
+
+                <div class="why-us-card">
+                    <div class="why-us-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>Licensed & Insured Professionals</h3>
+                    <p>Every technician is fully licensed, insured, and extensively trained. Your home is protected, and our work is guaranteed to meet the highest standards.</p>
+                </div>
+
+                <div class="why-us-card">
+                    <div class="why-us-icon">
+                        <i class="fas fa-phone-volume"></i>
+                    </div>
+                    <h3>24/7 Emergency Response</h3>
+                    <p>Plumbing emergencies don't wait for business hours, and neither do we. Our emergency team is available around the clock to protect your home.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         TESTIMONIALS SECTION
+    ======================================== -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Bedella Plumbing saved the day when our basement started flooding at 2 AM. They arrived within 30 minutes and had everything under control quickly. Truly professional and reliable service!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">JM</div>
+                        <div class="author-info">
+                            <h4>Jennifer Martinez</h4>
+                            <p>Homeowner, Kitchener</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"We hired Bedella for our complete bathroom renovation and couldn't be happier. The attention to detail and quality of workmanship exceeded our expectations. Worth every penny!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">RW</div>
+                        <div class="author-info">
+                            <h4>Robert Williams</h4>
+                            <p>Homeowner, Waterloo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Transparent pricing, excellent communication, and flawless execution. Bedella replaced our old water heater with a new tankless system. The team was courteous and left everything spotless."</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">SC</div>
+                        <div class="author-info">
+                            <h4>Sarah Chen</h4>
+                            <p>Homeowner, Cambridge</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"I've used Bedella for several projects over the years, from small repairs to a major kitchen plumbing upgrade. They consistently deliver premium service and stand behind their work. My go-to plumbers!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">DT</div>
+                        <div class="author-info">
+                            <h4>David Thompson</h4>
+                            <p>Homeowner, Kitchener</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Professional from start to finish. They diagnosed a hidden leak that other plumbers missed, saving us from potential major damage. Highly recommend Bedella for their expertise and integrity."</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">MP</div>
+                        <div class="author-info">
+                            <h4>Michelle Patterson</h4>
+                            <p>Homeowner, Guelph</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         CONTACT / QUOTE FORM SECTION
+    ======================================== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Request Your Free Quote</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="contact-content">
+                <form name="bedella-quote" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="quoteForm">
+                    <!-- Netlify form attributes -->
+                    <input type="hidden" name="form-name" value="bedella-quote">
+
+                    <!-- Honeypot for spam protection -->
+                    <div class="honeypot">
+                        <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullname">Full Name *</label>
+                            <input type="text" id="fullname" name="fullname" required placeholder="John Smith">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="(519) 555-0123">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="john.smith@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Service Type *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a Service</option>
+                            <option value="emergency">Emergency Plumbing</option>
+                            <option value="drain">Drain Cleaning</option>
+                            <option value="water-heater">Water Heater</option>
+                            <option value="leak">Leak Detection</option>
+                            <option value="pipe">Pipe Repair</option>
+                            <option value="fixture">Fixture Installation</option>
+                            <option value="sewer">Sewer Services</option>
+                            <option value="renovation">Bathroom Renovation</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Description of Issue *</label>
+                        <textarea id="message" name="message" required placeholder="Please describe your plumbing needs or the issue you're experiencing..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preferred Contact Method *</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="contact-phone" name="contact-method" value="phone" required>
+                                <label for="contact-phone">Phone</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="contact-email" name="contact-method" value="email" required>
+                                <label for="contact-email">Email</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary submit-btn">
+                        <i class="fas fa-paper-plane"></i> Request Quote
+                    </button>
+
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i> Thank you! Your quote request has been submitted. We'll contact you shortly.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER
+    ======================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Bedella Plumbing</h3>
+                    <p>Your trusted partner for luxury plumbing solutions in Kitchener and surrounding areas. Licensed, insured, and committed to excellence.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <span>(519) 555-0199</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@bedellaplumbing.ca</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kitchener, Ontario, Canada</span>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Business Hours</h3>
+                    <p><strong>Monday - Friday:</strong> 7:00 AM - 6:00 PM</p>
+                    <p><strong>Saturday:</strong> 8:00 AM - 5:00 PM</p>
+                    <p><strong>Sunday:</strong> 9:00 AM - 4:00 PM</p>
+                    <p style="color: var(--deep-red); font-weight: 600; margin-top: 15px;">
+                        <i class="fas fa-exclamation-circle"></i> Emergency Services: 24/7
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Service Areas</h3>
+                    <ul>
+                        <li>Kitchener</li>
+                        <li>Waterloo</li>
+                        <li>Cambridge</li>
+                        <li>Guelph</li>
+                        <li>Stratford</li>
+                        <li>And surrounding areas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bedella Plumbing. All Rights Reserved. | Licensed & Insured | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- ========================================
+         JAVASCRIPT
+    ======================================== -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form submission handling (for demonstration - Netlify will handle the actual submission)
+        const form = document.getElementById('quoteForm');
+        const successMessage = document.getElementById('successMessage');
+
+        // Note: When deployed to Netlify, the form will automatically be handled by Netlify Forms
+        // This is just for local testing/demonstration
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                successMessage.classList.add('show');
+                form.reset();
+
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+            });
+        }
+
+        // Smooth scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards, testimonials, and other elements
+        document.querySelectorAll('.service-card, .testimonial-card, .why-us-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
