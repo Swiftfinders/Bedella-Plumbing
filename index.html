@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bedella Plumbing - Luxury plumbing solutions for Kitchener, Ontario. Licensed, insured professionals offering 24/7 emergency service, drain cleaning, water heater installation, and bathroom renovations.">
-    <meta name="keywords" content="plumbing, Kitchener plumber, emergency plumbing, drain cleaning, water heater, bathroom renovation, Ontario plumber">
+    <meta name="description" content="Bedella Plumbing - Luxury plumbing solutions for Waterloo Region, Ontario. Serving residential and commercial customers. Licensed, insured professionals offering 24/7 emergency service, drain cleaning, water heater installation, and bathroom renovations.">
+    <meta name="keywords" content="plumbing, Waterloo Region plumber, Kitchener plumber, emergency plumbing, commercial plumbing, drain cleaning, water heater, bathroom renovation, Ontario plumber">
     <meta name="author" content="Bedella Plumbing">
-    <title>Bedella Plumbing | Luxury Plumbing Solutions in Kitchener, Ontario</title>
+    <title>Bedella Plumbing | Luxury Plumbing Solutions in Waterloo Region, Ontario</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -245,59 +245,155 @@
         ======================================== */
         .hero {
             position: relative;
-            height: 100vh;
-            min-height: 700px;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
             background-image: linear-gradient(rgba(26, 58, 82, 0.7), rgba(26, 58, 82, 0.7)),
                               url('https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=2000&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: var(--white);
+            padding: 100px 0 60px;
         }
 
-        .hero-content {
-            max-width: 900px;
+        .hero-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
             padding: 0 20px;
-            animation: fadeInUp 1s ease;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 40% 1fr;
+            gap: 60px;
+            align-items: center;
         }
 
-        .hero h1 {
+        .hero-form-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideInLeft 0.8s ease;
+        }
+
+        .hero-form-card h2 {
+            color: var(--deep-blue);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-form-card .form-subtitle {
+            color: var(--dark-gray);
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-text {
+            animation: fadeInRight 1s ease;
+        }
+
+        .hero-text h1 {
             color: var(--white);
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.1;
         }
 
-        .hero .subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 40px;
+        .hero-text .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .hero-text .subheadline {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
             color: var(--light-gray);
             font-weight: 300;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
         }
 
         .emergency-badge {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: rgba(196, 30, 58, 0.9);
-            padding: 12px 25px;
+            background: rgba(196, 30, 58, 0.95);
+            padding: 15px 30px;
             border-radius: 50px;
-            margin-top: 30px;
+            margin-top: 20px;
             animation: pulse 2s infinite;
+            box-shadow: 0 4px 15px rgba(196, 30, 58, 0.5);
         }
 
         .emergency-badge i {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+        }
+
+        .hero-form-card .form-group {
+            margin-bottom: 20px;
+        }
+
+        .hero-form-card .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--deep-blue);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .hero-form-card .form-group input,
+        .hero-form-card .form-group select,
+        .hero-form-card .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--medium-gray);
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .hero-form-card .form-group input:focus,
+        .hero-form-card .form-group select:focus,
+        .hero-form-card .form-group textarea:focus {
+            outline: none;
+            border-color: var(--deep-red);
+            box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1);
+        }
+
+        .hero-form-card .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .hero-form-card .submit-btn {
+            width: 100%;
+            padding: 16px;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         @keyframes fadeInUp {
@@ -848,16 +944,27 @@
                 display: block;
             }
 
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-form-card {
+                padding: 30px;
+                order: 1;
+            }
+
+            .hero-text {
+                order: 2;
+                text-align: center;
+            }
+
             .about-content {
                 grid-template-columns: 1fr;
             }
 
             .about-image img {
                 height: 400px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
             }
 
             .form-grid {
@@ -878,11 +985,28 @@
             h2 { font-size: 2rem; }
 
             .hero {
-                min-height: 600px;
+                min-height: auto;
+                padding: 100px 0 40px;
             }
 
-            .hero .subtitle {
-                font-size: 1.1rem;
+            .hero-form-card {
+                padding: 25px;
+            }
+
+            .hero-form-card h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-text .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-text .subheadline {
+                font-size: 1rem;
             }
 
             .btn {
@@ -913,6 +1037,10 @@
 
             .phone-number {
                 font-size: 0.9rem;
+            }
+
+            .hero-form-card {
+                padding: 20px;
             }
 
             .contact-content {
@@ -955,18 +1083,73 @@
          HERO SECTION
     ======================================== -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Luxury Plumbing Solutions for Kitchener Homes</h1>
-            <p class="subtitle">Professional, Reliable, Premium Service</p>
+        <div class="hero-container">
+            <!-- Left: Quote Form Card -->
+            <div class="hero-form-card">
+                <h2>Get Your Free Quote</h2>
+                <p class="form-subtitle">Fill out the form and we'll contact you promptly</p>
 
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Request Free Quote</a>
-                <a href="tel:5195550199" class="btn btn-secondary">Call Now</a>
+                <form name="bedella-quote-hero" method="POST" data-netlify="true" data-netlify-honeypot="bot-field-hero">
+                    <input type="hidden" name="form-name" value="bedella-quote-hero">
+
+                    <!-- Honeypot -->
+                    <div class="honeypot">
+                        <label>Don't fill this out if you're human: <input name="bot-field-hero"></label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hero-name">Full Name *</label>
+                        <input type="text" id="hero-name" name="fullname" required placeholder="John Smith">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hero-phone">Phone Number *</label>
+                        <input type="tel" id="hero-phone" name="phone" required placeholder="(519) 555-0123">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hero-email">Email Address *</label>
+                        <input type="email" id="hero-email" name="email" required placeholder="john.smith@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hero-service">Service Type *</label>
+                        <select id="hero-service" name="service" required>
+                            <option value="">Select a Service</option>
+                            <option value="emergency">Emergency Plumbing</option>
+                            <option value="drain">Drain Cleaning</option>
+                            <option value="water-heater">Water Heater</option>
+                            <option value="leak">Leak Detection</option>
+                            <option value="pipe">Pipe Repair</option>
+                            <option value="fixture">Fixture Installation</option>
+                            <option value="sewer">Sewer Services</option>
+                            <option value="renovation">Bathroom Renovation</option>
+                            <option value="commercial">Commercial Plumbing</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hero-message">Brief Description *</label>
+                        <textarea id="hero-message" name="message" required placeholder="Describe your plumbing needs..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary submit-btn">
+                        <i class="fas fa-paper-plane"></i> Request Quote
+                    </button>
+                </form>
             </div>
 
-            <div class="emergency-badge">
-                <i class="fas fa-shield-alt"></i>
-                <span><strong>Emergency Service</strong> - Available 24/7</span>
+            <!-- Right: Hero Text -->
+            <div class="hero-text">
+                <h1>Luxury Plumbing Solutions for Everyone in Waterloo Region</h1>
+                <p class="subtitle">Serving Residential & Commercial Customers</p>
+                <p class="subheadline">Professional, Reliable, Premium Service</p>
+
+                <div class="emergency-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span><strong>Emergency Service</strong> - Available 24/7</span>
+                </div>
             </div>
         </div>
     </section>
@@ -982,12 +1165,12 @@
                 </div>
 
                 <div class="about-text">
-                    <h2>Kitchener's Premier Plumbing Experts</h2>
-                    <p>For over 15 years, Bedella Plumbing has been the trusted name in luxury plumbing solutions throughout Kitchener, Ontario. Our commitment to excellence, attention to detail, and premium service have made us the preferred choice for homeowners who demand the best.</p>
+                    <h2>Waterloo Region's Premier Plumbing Experts</h2>
+                    <p>For over 15 years, Bedella Plumbing has been the trusted name in luxury plumbing solutions throughout Waterloo Region. Serving the entire Waterloo Region, our commitment to excellence, attention to detail, and premium service have made us the preferred choice for homeowners and businesses who demand the best.</p>
 
-                    <p>We understand that your home is your sanctuary, which is why we treat every job with the utmost care and professionalism. From routine maintenance to complex installations and emergency repairs, our licensed and insured team delivers exceptional results that stand the test of time.</p>
+                    <p>Trusted by homeowners and businesses alike, we understand that whether it's your home sanctuary or your commercial property, every job deserves the utmost care and professionalism. From routine maintenance to complex installations and emergency repairs, our licensed and insured team delivers exceptional results that stand the test of time.</p>
 
-                    <p>As a locally-owned business, we take pride in serving our community with integrity, transparency, and a dedication to customer satisfaction that goes beyond expectations.</p>
+                    <p>As a locally-owned business, we take pride in serving residential and commercial customers throughout our community with integrity, transparency, and a dedication to customer satisfaction that goes beyond expectations.</p>
 
                     <div class="trust-badges">
                         <div class="badge">
@@ -1037,7 +1220,7 @@
                     </div>
                     <div class="service-content">
                         <h3>Emergency Plumbing Services</h3>
-                        <p>24/7 rapid response for urgent plumbing emergencies. Our team is always ready to protect your home from water damage and restore functionality quickly.</p>
+                        <p>24/7 rapid response for urgent plumbing emergencies in homes and businesses. Our team is always ready to protect your property from water damage and restore functionality quickly.</p>
                     </div>
                 </div>
 
@@ -1050,7 +1233,7 @@
                     </div>
                     <div class="service-content">
                         <h3>Drain Cleaning & Maintenance</h3>
-                        <p>Professional drain cleaning using advanced techniques and equipment. Prevent clogs, eliminate odors, and maintain optimal drainage throughout your home.</p>
+                        <p>Professional drain cleaning using advanced techniques and equipment for residential and commercial properties. Prevent clogs, eliminate odors, and maintain optimal drainage.</p>
                     </div>
                 </div>
 
@@ -1108,7 +1291,7 @@
 
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1581578017093-cd30ed3fbb0a?q=80&w=800&auto=format&fit=crop" alt="Sewer Services">
+                        <img src="https://images.unsplash.com/photo-1504253492562-0c93ef2d3c8e?q=80&w=800&auto=format&fit=crop" alt="Sewer Services">
                         <div class="service-icon">
                             <i class="fas fa-hard-hat"></i>
                         </div>
@@ -1167,7 +1350,7 @@
                         <i class="fas fa-user-shield"></i>
                     </div>
                     <h3>Licensed & Insured Professionals</h3>
-                    <p>Every technician is fully licensed, insured, and extensively trained. Your home is protected, and our work is guaranteed to meet the highest standards.</p>
+                    <p>Every technician is fully licensed, insured, and extensively trained. Your property is protected, and our work is guaranteed to meet the highest standards.</p>
                 </div>
 
                 <div class="why-us-card">
@@ -1175,7 +1358,7 @@
                         <i class="fas fa-phone-volume"></i>
                     </div>
                     <h3>24/7 Emergency Response</h3>
-                    <p>Plumbing emergencies don't wait for business hours, and neither do we. Our emergency team is available around the clock to protect your home.</p>
+                    <p>Plumbing emergencies don't wait for business hours, and neither do we. Our emergency team is available around the clock to protect your property.</p>
                 </div>
             </div>
         </div>
@@ -1205,8 +1388,8 @@
                     <div class="testimonial-author">
                         <div class="author-image">JM</div>
                         <div class="author-info">
-                            <h4>Jennifer Martinez</h4>
-                            <p>Homeowner, Kitchener</p>
+                            <h4>Jennifer M.</h4>
+                            <p>Homeowner - Waterloo Region</p>
                         </div>
                     </div>
                 </div>
@@ -1220,12 +1403,12 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p class="testimonial-text">"We hired Bedella for our complete bathroom renovation and couldn't be happier. The attention to detail and quality of workmanship exceeded our expectations. Worth every penny!"</p>
+                    <p class="testimonial-text">"As a restaurant owner, I need reliable commercial plumbing services. Bedella installed our new kitchen grease trap and upgraded our water lines with zero downtime. Their team worked around our hours and completed everything professionally."</p>
                     <div class="testimonial-author">
-                        <div class="author-image">RW</div>
+                        <div class="author-image">MC</div>
                         <div class="author-info">
-                            <h4>Robert Williams</h4>
-                            <p>Homeowner, Waterloo</p>
+                            <h4>Marco's Italian Bistro</h4>
+                            <p>Business Owner - Cambridge</p>
                         </div>
                     </div>
                 </div>
@@ -1243,8 +1426,8 @@
                     <div class="testimonial-author">
                         <div class="author-image">SC</div>
                         <div class="author-info">
-                            <h4>Sarah Chen</h4>
-                            <p>Homeowner, Cambridge</p>
+                            <h4>Sarah C.</h4>
+                            <p>Homeowner - Kitchener</p>
                         </div>
                     </div>
                 </div>
@@ -1258,12 +1441,12 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p class="testimonial-text">"I've used Bedella for several projects over the years, from small repairs to a major kitchen plumbing upgrade. They consistently deliver premium service and stand behind their work. My go-to plumbers!"</p>
+                    <p class="testimonial-text">"When our medical clinic had a plumbing emergency, Bedella responded immediately. They understand the critical nature of healthcare facilities and worked efficiently to restore our services. Can't thank them enough!"</p>
                     <div class="testimonial-author">
-                        <div class="author-image">DT</div>
+                        <div class="author-image">WH</div>
                         <div class="author-info">
-                            <h4>David Thompson</h4>
-                            <p>Homeowner, Kitchener</p>
+                            <h4>Waterloo Health Centre</h4>
+                            <p>Business Owner - Waterloo</p>
                         </div>
                     </div>
                 </div>
@@ -1277,12 +1460,12 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p class="testimonial-text">"Professional from start to finish. They diagnosed a hidden leak that other plumbers missed, saving us from potential major damage. Highly recommend Bedella for their expertise and integrity."</p>
+                    <p class="testimonial-text">"We hired Bedella for our complete bathroom renovation and couldn't be happier. The attention to detail and quality of workmanship exceeded our expectations. They're true professionals!"</p>
                     <div class="testimonial-author">
-                        <div class="author-image">MP</div>
+                        <div class="author-image">RW</div>
                         <div class="author-info">
-                            <h4>Michelle Patterson</h4>
-                            <p>Homeowner, Guelph</p>
+                            <h4>Robert W.</h4>
+                            <p>Homeowner - Elmira</p>
                         </div>
                     </div>
                 </div>
@@ -1339,6 +1522,7 @@
                             <option value="fixture">Fixture Installation</option>
                             <option value="sewer">Sewer Services</option>
                             <option value="renovation">Bathroom Renovation</option>
+                            <option value="commercial">Commercial Plumbing</option>
                             <option value="other">Other</option>
                         </select>
                     </div>
@@ -1382,7 +1566,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Bedella Plumbing</h3>
-                    <p>Your trusted partner for luxury plumbing solutions in Kitchener and surrounding areas. Licensed, insured, and committed to excellence.</p>
+                    <p>Your trusted partner for luxury residential and commercial plumbing solutions throughout Waterloo Region. Licensed, insured, and committed to excellence.</p>
                     <div class="social-icons">
                         <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
@@ -1403,7 +1587,7 @@
                     </div>
                     <div class="contact-info">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Kitchener, Ontario, Canada</span>
+                        <span>Waterloo Region, Ontario, Canada</span>
                     </div>
                 </div>
 
@@ -1419,10 +1603,12 @@
 
                 <div class="footer-section">
                     <h3>Service Areas</h3>
+                    <p style="font-weight: 600; color: var(--white); margin-bottom: 15px;">Waterloo Region & Beyond</p>
                     <ul>
                         <li>Kitchener</li>
                         <li>Waterloo</li>
                         <li>Cambridge</li>
+                        <li>Elmira</li>
                         <li>Guelph</li>
                         <li>Stratford</li>
                         <li>And surrounding areas</li>
